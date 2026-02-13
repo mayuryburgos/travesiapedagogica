@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Héctor Villanueva | Honda Elite Sales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --electric-blue: #0066ff;
+            --glass-bg: rgba(10, 10, 15, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #020205;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 242, 255, 0.15);
+        }
+
+        .text-neon {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.15) 0%, rgba(2, 2, 5, 0) 70%);
+        }
+
+        .input-glass {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .input-glass:focus {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            outline: none;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .peer:checked + .checkbox-card {
+            background: rgba(0, 242, 255, 0.1);
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+        }
+
+        .stat-card:hover i {
+            transform: scale(1.1);
+            color: var(--neon-blue);
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.6));
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Luxury Nav -->
+    <nav class="fixed w-full z-50 px-4 md:px-8 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-4 md:px-6 py-3 border-white/5">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                    <img src="https://download-warehouse.sketchup.com/warehouse/v1.0/content/public/45a93680-eee7-4478-a8fb-9145071daec0" alt="Logo" class="w-8 h-8 object-contain">
+                </div>
+                <span class="font-extrabold tracking-tighter text-lg md:text-xl uppercase">Héctor <span class="text-blue-500 italic">villanueva</span></span>
+            </div>
+            <div>
+                <a href="#precual" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all uppercase tracking-widest shadow-lg shadow-blue-900/20">
+                    Iniciar Precualificación
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden hero-gradient">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full border-blue-500/20">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                        </span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-cyan-400">Frecuente Vendedor del Mes</span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none">
+                        TU PRÓXIMO <br>
+                        <span class="text-neon italic">HONDA</span> COMIENZA AQUÍ.
+                    </h1>
+                    
+                    <p class="text-xl text-gray-400 max-w-xl leading-relaxed">
+                        Experimenta el proceso de compra más profesional y transparente. Especialista en Honda y usados certificados con <span class="text-white font-semibold">aprobación inmediata</span> para todo tipo de crédito.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="#precual" class="px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] text-center uppercase tracking-wider">
+                            INICIAR PRECUALIFICACIÓN
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative z-10 glass-dark rounded-[40px] p-2 border-white/10 overflow-hidden group">
+                        <img src="https://scontent.fbga1-3.fna.fbcdn.net/v/t51.82787-15/609657351_18167780557380726_3156032717856553477_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE8jEnlE2xnxKfFyZ4x7urFYazhrc89H3VhrOGtzz0fdV-1jFjm5Diq922qGndvEnx9cTW6lzTR3_jy-YH5udTm&_nc_ohc=B57yYwjFSB4Q7kNvwE-suoc&_nc_oc=AdnqXR0QeXk4XwUXbc9NBUKM0bSzoiB5G8cfvsVSCFmCLaMdFrdaKXf3EP0hIXzsiv0&_nc_zt=23&_nc_ht=scontent.fbga1-3.fna&_nc_gid=TXOAwhD0iumBgadHXKHMQw&oh=00_AfvXTuNfxJTePCKrjHuHjwYX1QG-WGNnE2JX37I4e8UShw&oe=69939228" 
+                             alt="Héctor Villanueva" 
+                             class="w-full h-full object-cover rounded-[34px] transition-transform duration-700 group-hover:scale-105">
+                        
+                        <!-- Minimal Photo Overlay -->
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
+                            <h3 class="text-3xl font-black italic uppercase tracking-tighter">Héctor Villanueva</h3>
+                            <p class="text-blue-400 text-xs font-bold uppercase tracking-[0.3em]">Ejecutivo de Ventas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Stats - Icons Updated -->
+    <section id="experiencia" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="group space-y-6 stat-card">
+                    <i class="fas fa-certificate text-5xl text-blue-500/80 transition-all duration-300"></i>
+                    <h4 class="text-3xl font-black italic uppercase tracking-tighter leading-none">Experiencia <br><span class="text-blue-500">Probada</span></h4>
+                    <p class="text-gray-400 leading-relaxed border-l-2 border-blue-500/20 pl-6">Vendedor del mes en múltiples ocasiones. Capacitado para asesorarte en la mejor inversión para tu futuro.</p>
+                </div>
+                <div class="group space-y-6 stat-card">
+                    <i class="fas fa-shield-check text-5xl text-blue-500/80 transition-all duration-300"></i>
+                    <h4 class="text-3xl font-black italic uppercase tracking-tighter leading-none">Negocio <br><span class="text-blue-500">Garantizado 🤝</span></h4>
+                    <p class="text-gray-400 leading-relaxed border-l-2 border-blue-500/20 pl-6">Aquí el proceso es claro, sin estrés y con acompañamiento de principio a fin. El mejor negocio en Puerto Rico.</p>
+                </div>
+                <div class="group space-y-6 stat-card">
+                    <i class="fas fa-headset text-5xl text-blue-500/80 transition-all duration-300"></i>
+                    <h4 class="text-3xl font-black italic uppercase tracking-tighter leading-none">Asistencia <br><span class="text-blue-500">Extendida</span></h4>
+                    <p class="text-gray-400 leading-relaxed border-l-2 border-blue-500/20 pl-6">Mi relación con el cliente no termina en la entrega. Ofrezco asistencia continua y empatía en cada paso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funnel Form Section -->
+    <section id="precual" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 space-y-2">
+                    <h2 class="text-5xl font-black tracking-tighter italic uppercase leading-tight">Tu camino hacia un Honda nuevo <br> <span class="text-neon">comienza hoy</span></h2>
+                    <p class="text-gray-500 text-sm uppercase tracking-widest font-bold">Formulario de Precualificación</p>
+                </div>
+
+                <form id="proFunnel" class="glass-dark p-8 md:p-16 rounded-[40px] border-white/10 space-y-12">
+                    
+                    <!-- Section: Identidad -->
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-4 text-blue-400">
+                            <span class="w-8 h-8 rounded-full border border-blue-500 flex items-center justify-center text-xs font-bold">01</span>
+                            <h3 class="text-xl font-bold uppercase tracking-wider">Información Personal</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Nombre Completo</label>
+                                <input type="text" required class="input-glass w-full p-4 rounded-xl text-white" placeholder="Ej. Juan del Pueblo">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Teléfono de Contacto</label>
+                                <input type="tel" required class="input-glass w-full p-4 rounded-xl text-white" placeholder="787-000-0000">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Correo Electrónico</label>
+                            <input type="email" required class="input-glass w-full p-4 rounded-xl text-white" placeholder="tuemail@ejemplo.com">
+                        </div>
+                    </div>
+
+                    <!-- Section: Edad y Co-deudor -->
+                    <div class="space-y-6">
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">¿Eres mayor de 21 años?</label>
+                        <div class="flex gap-8">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="radio" name="age_req" value="yes" checked onclick="toggleParents(false)" class="w-5 h-5 accent-blue-500">
+                                <span class="text-sm font-medium">Sí, soy mayor</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="radio" name="age_req" value="no" onclick="toggleParents(true)" class="w-5 h-5 accent-blue-500">
+                                <span class="text-sm font-medium">No (Requiere Codeudor)</span>
+                            </label>
+                        </div>
+                        
+                        <div id="parentInfo" class="hidden p-8 rounded-3xl bg-white/5 border border-white/10 space-y-6">
+                            <p class="text-xs text-blue-400 font-bold uppercase italic tracking-widest">Información requerida de padres:</p>
+                            <div class="grid md:grid-cols-1 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[10px] uppercase tracking-widest text-gray-400">Nombre completo de Padre/Madre</label>
+                                    <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Nombre completo">
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label class="text-[10px] uppercase tracking-widest text-gray-400">Telefono de Contacto</label>
+                                        <input type="tel" class="input-glass w-full p-4 rounded-xl" placeholder="787-000-0000">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-[10px] uppercase tracking-widest text-gray-400">Correo de Contacto</label>
+                                        <input type="email" class="input-glass w-full p-4 rounded-xl" placeholder="email@contacto.com">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section: El Vehículo -->
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-4 text-blue-400">
+                            <span class="w-8 h-8 rounded-full border border-blue-500 flex items-center justify-center text-xs font-bold">02</span>
+                            <h3 class="text-xl font-bold uppercase tracking-wider">Tu Próximo Vehículo</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Preferencia de Inventario</label>
+                            <select id="invType" onchange="toggleInvFields()" class="input-glass w-full p-4 rounded-xl">
+                                <option value="honda">Honda Nuevo</option>
+                                <option value="used">Usado Certificado (Cualquier Marca)</option>
+                            </select>
+                        </div>
+
+                        <div id="hondaModelsGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="HRV" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">HRV</div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="CIVIC" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">CIVIC</div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="ACCORD" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">ACCORD</div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="CRV" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">CRV</div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="PASSPORT" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">PASSPORT</div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="PILOT" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">PILOT</div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="ODYSSEY" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">ODYSSEY</div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="checkbox" name="honda_models" value="RIDGELINE" class="peer sr-only">
+                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">RIDGELINE</div>
+                            </label>
+                        </div>
+
+                        <div id="usedFieldsGroup" class="hidden space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Año preferido">
+                                <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Marca / Modelo">
+                            </div>
+                            <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Presupuesto aproximado">
+                            <textarea class="input-glass w-full p-4 rounded-xl h-24" placeholder="Notas adicionales sobre el usado..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-4 text-blue-400">
+                            <span class="w-8 h-8 rounded-full border border-blue-500 flex items-center justify-center text-xs font-bold">03</span>
+                            <h3 class="text-xl font-bold uppercase tracking-wider">Perfil Financiero</h3>
+                        </div>
+
+                        <div class="space-y-6">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">¿Tienes un auto para entregar (Trade-In)?</label>
+                            <div class="flex gap-6">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="trade_in" value="yes" onclick="toggleTradeIn(true)" class="w-5 h-5 accent-blue-500"> <span>Sí</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="trade_in" value="no" checked onclick="toggleTradeIn(false)" class="w-5 h-5 accent-blue-500"> <span>No</span>
+                                </label>
+                            </div>
+                            
+                            <div id="tradeInComplex" class="hidden p-6 glass rounded-2xl space-y-4">
+                                <p class="text-xs font-bold text-blue-400 uppercase">Estado del Trade-In:</p>
+                                <div class="flex gap-4">
+                                    <label class="flex items-center gap-2"><input type="radio" name="trade_status" value="saldo" onclick="toggleDebt(false)"> Saldo</label>
+                                    <label class="flex items-center gap-2"><input type="radio" name="trade_status" value="debe" onclick="toggleDebt(true)"> Debe</label>
+                                </div>
+                                <div id="debtDetails" class="hidden grid md:grid-cols-2 gap-4">
+                                    <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="¿Cuánto debe?">
+                                    <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Institución bancaria">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Pronto Disponible</label>
+                                <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="$0.00">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Lugar de Trabajo</label>
+                                <input type="text" required class="input-glass w-full p-4 rounded-xl" placeholder="Empresa o Profesión">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">¿Cuándo deseas adquirir tu unidad?</label>
+                            <select class="input-glass w-full p-4 rounded-xl">
+                                <option>Inmediatamente</option>
+                                <option>Dentro de 7 días</option>
+                                <option>Este mes</option>
+                                <option>Planificando a futuro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-6 bg-white text-black font-black text-2xl rounded-2xl transition-all hover:bg-blue-500 hover:text-white hover:scale-[1.02] active:scale-95 shadow-[0_20px_40px_rgba(255,255,255,0.1)] uppercase italic">
+                        ENVIAR MI SOLICITUD <i class="fas fa-arrow-right ml-3"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Program -->
+    <section id="referidos" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="glass-dark p-1 rounded-3xl">
+                <div class="bg-gradient-to-r from-blue-900/60 to-black p-8 md:p-20 rounded-[22px] flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="max-w-xl text-center md:text-left space-y-4">
+                        <h2 class="text-5xl font-extrabold italic tracking-tighter uppercase leading-none">¿Conoces a alguien <br><span class="text-blue-400">buscando auto?</span></h2>
+                        <p class="text-xl text-gray-300">Gana <span class="text-neon font-bold">$200 cash</span> por cada referido que cierre su negocio conmigo. Sin letras pequeñas.</p>
+                    </div>
+                    <div class="text-center bg-white/5 p-10 rounded-[40px] border border-white/10 backdrop-blur-md">
+                        <span class="text-8xl font-black text-white block mb-2 leading-none">$200</span>
+                        <span class="text-xs uppercase tracking-[0.4em] text-blue-400 font-bold">Por cada venta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="py-24 bg-black border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="https://www.facebook.com/H.villanuevaautosale" class="text-3xl text-gray-500 hover:text-blue-500 transition-colors"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/eldeloshonda" class="text-3xl text-gray-500 hover:text-pink-500 transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <p class="text-4xl font-extrabold italic tracking-tighter mb-4 uppercase">"Móntate conmigo y siente la diferencia Honda." 🚀</p>
+            <p class="text-blue-400 font-bold text-xl mb-8">Aquí el proceso es claro, rápido y sin estrés 👊</p>
+            
+            <p class="text-gray-600 font-bold tracking-widest text-sm uppercase">© 2026 Héctor Villanueva - Honda Sales Executive</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleParents(show) {
+            const el = document.getElementById('parentInfo');
+            el.classList.toggle('hidden', !show);
+        }
+
+        function toggleInvFields() {
+            const val = document.getElementById('invType').value;
+            document.getElementById('hondaModelsGrid').classList.toggle('hidden', val !== 'honda');
+            document.getElementById('usedFieldsGroup').classList.toggle('hidden', val !== 'used');
+        }
+
+        function toggleTradeIn(show) {
+            document.getElementById('tradeInComplex').classList.toggle('hidden', !show);
+        }
+
+        function toggleDebt(show) {
+            document.getElementById('debtDetails').classList.toggle('hidden', !show);
+        }
+
+        document.getElementById('proFunnel').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = 'PROCESANDO SOLICITUD... <i class="fas fa-circle-notch fa-spin ml-2"></i>';
+            btn.classList.add('opacity-50', 'pointer-events-none');
+
+            setTimeout(() => {
+                btn.innerHTML = '¡SOLICITUD ENVIADA! ✅';
+                btn.style.backgroundColor = '#10b981';
+                btn.style.color = 'white';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
