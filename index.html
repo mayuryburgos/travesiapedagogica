@@ -373,6 +373,24 @@
             font-size: 20px;
             transition: 0.3s;
         }
+        /* Estilo para los enlaces a anexos */
+.link-anexo {
+    color: #2e026d !important; /* Morado oscuro */
+    text-decoration: underline;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.link-anexo:hover {
+    opacity: 0.7;
+    color: var(--primary-purple) !important;
+}
+
+/* Asegurar scroll suave global */
+html {
+    scroll-behavior: smooth;
+}
 
         .slider-nav:hover { background: var(--accent-color); }
         .prev-btn { left: -10px; }
@@ -391,7 +409,7 @@
             h1 { font-size: 1.5rem; }
             h2 { font-size: 1.3rem; padding: 10px 20px; }
             .slider-wrapper img { height: 250px; }
-        }
+        }                  
     </style>
 </head>
 <body>
@@ -490,12 +508,12 @@
         <p>En una reunión convocada con siete docentes que decidieron poner su vocación al servicio de los estudiantes —danza, radioteatro, robótica, bilingüismo, club de lectura y pensamiento matemático— comenzó a gestarse una apuesta colectiva. No teníamos escenarios ideales ni aulas especializadas. Teníamos voluntad, creatividad y una convicción compartida: cuando se quiere transformar la escuela, se empieza con lo que se tiene.</p>
 
         <h3 class="title-caps">Equipo Líder de los Centros de Interés:</h3>
-        <img src="https://static.wixstatic.com/media/e56c55_d8c5a6177c5b41678ec424360b29d2b5~mv2.jpg" alt="Equipo Líder" class="content-img">
+        <img src="https://static.wixstatic.com/media/e56c55_704be5ec38894b1cae406e1f15e275b6~mv2.jpg" alt="Equipo Líder" class="content-img">
 
         <p>El primer paso lo dio la profesora Dora Inés Cortés, quien convocó a estudiantes de grado décimo y undécimo para conformar el Centro de Interés de Radioteatro. El espacio asignado fue la terraza de la sede A, lejos de ser un lugar cómodo o acondicionado. Sin embargo, allí, entre micrófonos improvisados y condiciones poco favorables, los estudiantes comenzaron a construir sus apuestas teatrales, podcasts y relatos sonoros, demostrando que el aprendizaje no depende exclusivamente de la infraestructura, sino del sentido que se le otorgue al proceso.</p>
 
         <h3 class="title-caps">Centro de Interés de Radioteatro:</h3>
-        <img src="https://static.wixstatic.com/media/e56c55_00f48a1944f94dea929b07979ef187f4~mv2.jpg" alt="Radioteatro" class="content-img">
+        <img src="https://static.wixstatic.com/media/e56c55_3a28035d1a9344b68e0e4ff08611ccb9~mv2.jpg" alt="Radioteatro" class="content-img">
 
         <p>De manera progresiva, los demás Centros de Interés fueron tomando forma. Alrededor de 140 estudiantes de diferentes niveles educativos participaron activamente, extendiendo incluso algunas experiencias —como pensamiento matemático y danza— hacia la primaria. Lo que inició como una apuesta incierta se convirtió en un espacio de encuentro, diálogo y construcción colectiva.</p>
     </section>
@@ -548,7 +566,7 @@
 
     <section id="ejes">
         <h2>Eje 1: El Plan de Formación Integral como apuesta institucional</h2>
-        <p>El Plan de Formación Integral implementado en 2025 (Ver Anexo 1) partió del reconocimiento de que la educación no puede reducirse al dominio de contenidos académicos. La formación integral implica el desarrollo de habilidades socioemocionales, comunicativas, artísticas, tecnológicas y ciudadanas, en diálogo permanente con el currículo. Desde esta mirada, se estructuraron siete Centros de Interés:</p>
+        <p>El Plan de Formación Integral implementado en 2025 (<a href="#anexo1" class="link-anexo">Ver Anexo 1</a>) partió del reconocimiento de que la educación no puede reducirse al dominio de contenidos académicos. La formación integral implica el desarrollo de habilidades socioemocionales, comunicativas, artísticas, tecnológicas y ciudadanas, en diálogo permanente con el currículo. Desde esta mirada, se estructuraron siete Centros de Interés:</p>
         
         <div class="ci-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px;">
     <div class="ci-card"><div class="ci-number">1</div>Radio Teatro</div>
@@ -610,8 +628,8 @@
 
         <h3 class="title-caps">Reflexión sobre la Formación Integral y ajustes al plan:</h3>
         <div class="flex-images">
-            <img src="https://static.wixstatic.com/media/e56c55_436887aedfbe4e86aead53757de351d5~mv2.jpg" alt="Reflexión 1">
-            <img src="https://static.wixstatic.com/media/e56c55_36c6a068b21c4a988eb3a85f9ca9950d~mv2.jpg" alt="Reflexión 2">
+            <img src="https://static.wixstatic.com/media/e56c55_fd76882f34c54eb580dad9f0c27bdc61~mv2.jpg" alt="Reflexión 1">
+            <img src="https://static.wixstatic.com/media/e56c55_a9e951e7d2b647c1a8f6965492abb23e~mv2.jpg" alt="Reflexión 2">
         </div>
     </section>
 
@@ -622,27 +640,27 @@
         <div class="slider-outer-wrapper">
             <button class="slider-nav prev-btn" onclick="scrollSlider('slider1', -1)">&#10094;</button>
             <div class="slider-wrapper" id="slider1">
-                <img src="https://static.wixstatic.com/media/e56c55_2678e838a0fc473fbbfd8fa5b37e349e~mv2.jpg" alt="CI 1">
-                <img src="https://static.wixstatic.com/media/e56c55_4027becf67ec4155a0207227612a7bbe~mv2.jpg" alt="CI 2">
-                <img src="https://static.wixstatic.com/media/e56c55_611f2d3688e8498c8822c27279f86cf0~mv2.jpg" alt="CI 3">
-                <img src="https://static.wixstatic.com/media/e56c55_0c5874944cc7405f8f322dd237f38b1f~mv2.jpg" alt="CI 4">
-                <img src="https://static.wixstatic.com/media/e56c55_85bfe571978045c090b4a45566ebdefa~mv2.jpg" alt="CI 5">
-                <img src="https://static.wixstatic.com/media/e56c55_430cb67b8c38482eb1b597695b01ace1~mv2.jpg" alt="CI 6">
-                <img src="https://static.wixstatic.com/media/e56c55_bca7ba24b8e044b1b0da0e373caf3338~mv2.jpg" alt="CI 7">
+                <img src="https://static.wixstatic.com/media/e56c55_4e14f5810ed64160954cb2ee5fb58fdf~mv2.jpg" alt="CI 1">
+                <img src="https://static.wixstatic.com/media/e56c55_65ee80b3274f4c1a9d50c8261d46a375~mv2.jpg" alt="CI 2">
+                <img src="https://static.wixstatic.com/media/e56c55_015f152b675e4d68b121ca34fd349b2e~mv2.jpg" alt="CI 3">
+                <img src="https://static.wixstatic.com/media/e56c55_f7da1189599b40dc9bc079d7541e81b6~mv2.jpg" alt="CI 4">
+                <img src="https://static.wixstatic.com/media/e56c55_a842fdad240641958617fd651b4944e6~mv2.jpg" alt="CI 5">
+                <img src="https://static.wixstatic.com/media/e56c55_7cedc7146a98447e864896ddaa233285~mv2.jpg" alt="CI 6">
+                <img src="https://static.wixstatic.com/media/e56c55_06bc9deac00f4322ae1732ad23ef4894~mv2.jpg" alt="CI 7">
             </div>
             <button class="slider-nav next-btn" onclick="scrollSlider('slider1', 1)">&#10095;</button>
         </div>
 
         <p>Durante 2025, los Centros de Interés se consolidaron como una de las estrategias más significativas del proceso. Estudiantes, docentes y directivos coincidieron en que estos espacios fortalecieron el aprovechamiento del tiempo libre y promovieron aprendizajes del saber, saber hacer y saber ser. El trabajo en grupos pequeños permitió una relación más cercana entre docentes y estudiantes, favoreciendo la autonomía, el trabajo colaborativo y la confianza. Las encuestas de valoración evidencian altos niveles de satisfacción: un 65 % de los estudiantes manifestó sentirse más seguro para expresar sus ideas y talentos, lo cual refleja avances importantes en la dimensión socioemocional, como se muestra en el gráfico:</p>
         
-        <img src="https://static.wixstatic.com/media/e56c55_b442ba321cda480b83d7a742a0e9c458~mv2.png" alt="Gráfico Valoración" class="content-img">
+        <img src="https://static.wixstatic.com/media/e56c55_de62770a915e4f87b4ef3b1d900c05f4~mv2.png" alt="Gráfico Valoración" class="content-img">
 
         <h3 class="title-caps">Encuesta de Valoración de los CI:</h3>
-        <img src="https://static.wixstatic.com/media/e56c55_42855fb335c94466aa8ae18608a22092~mv2.png" alt="Encuesta" class="content-img">
+        <img src="https://static.wixstatic.com/media/e56c55_d5a99c82fa114fa2aaaf7d1ead6a0067~mv2.png" alt="Encuesta" class="content-img">
 
         <p>La gestión de recursos fue otro desafío superado colectivamente. Con el apoyo de la rectora y los recursos destinados a formación integral, se lograron adquirir materiales para pensamiento matemático, trajes para danza, micrófonos inalámbricos para teatro y kits de robótica, evidenciando que la gestión pedagógica también es una forma de liderazgo educativo. En la encuesta de satisfacción de los estudiantes un 60% dice que se contó con los recursos necesarios.</p>
         
-        <img src="https://static.wixstatic.com/media/e56c55_e3e0997031104900b8d477e4f80d7d5a~mv2.png" alt="Encuesta Recursos" class="content-img">
+        <img src="https://static.wixstatic.com/media/e56c55_8794961134554b89872834ced6e2a90c~mv2.png" alt="Encuesta Recursos" class="content-img">
 
 <section id="formacion">
         <h2 style="margin-bottom: 40px;">Eje 2: Formación Integral: Centros de Interés y Educación CRESE</h2>
@@ -668,17 +686,17 @@
                         En cuanto a los recursos, es necesario fortalecer la gestión institucional y establecer protocolos claros de uso. Asimismo, se identifica como oportunidad estratégica la gestión de <strong>alianzas externas</strong>.
                     </p>
                     <p style="margin: 0; font-weight: 700; color: #fff; text-align: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; margin-top: 10px;">
-                        👉 Ver Anexo 2. Matriz de Balance Centros de Interés
+                        👉 <a href="#anexo2" class="link-anexo" style="color: #2e026d !important;">Ver Anexo 2. </a> Matriz de Balance Centros de Interés
                     </p>
                 </div>
             </div>
 
             <div style="flex: 1; min-width: 280px; max-width: 380px; margin: 0 auto;">
-                <div id="videoTrigger" style="cursor: pointer; position: relative; width: 100%; height: 480px; background: #000; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 2px solid rgba(240, 171, 252, 0.2);">
+                <div id="videoTrigger" style="cursor: pointer; position: relative; width: 100%; height: 480px; background: #000; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 0px solid rgba(240, 171, 252, 0.2);">
                     
                     <img src="https://static.wixstatic.com/media/e56c55_786821e12227428c8b8637c22c6b4680~mv2.png" 
                          alt="Portada Video" 
-                         style="width: 100%; height: 100%; object-fit: contain; background-color: #1a1a1a;">
+                         style="width: 100%; height: 100%; object-fit: cover;">
                     
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.1);">
                         <div class="play-button-container" style="width: 80px; height: 80px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 40px rgba(240, 171, 252, 0.4);">
@@ -687,7 +705,7 @@
                     </div>
                 </div>
                 <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; opacity: 0.8; font-style: italic; color: var(--accent-color);">
-                    Click para reproducir experiencia
+                    Click para reproducir experiencia CI
                 </p>
             </div>
         </div>
@@ -722,8 +740,8 @@
         <h3 class="title-caps">Reunión Consejo Académico 2025:</h3>
         <p style="text-align: center; font-size: 0.9rem; opacity: 0.8;">Docentes de primaria, rectora Alba Lucia Delgado Rugeles y Coordinadora María Eugenia Baez</p>
         <div class="flex-images">
-            <img src="https://static.wixstatic.com/media/e56c55_00f579ec6c5a446da75b4bcb931d5188~mv2.jpg" alt="Consejo 1">
-            <img src="https://static.wixstatic.com/media/e56c55_8e22f2c227194c62b92404b53fd98458~mv2.jpg" alt="Consejo 2">
+            <img src="https://static.wixstatic.com/media/e56c55_0b1b5a571ce144b7a8d6ec4017c0a3d0~mv2.jpg" alt="Consejo 1">
+            <img src="https://static.wixstatic.com/media/e56c55_50aca09629dd4258b985d04494cfcbf3~mv2.jpg" alt="Consejo 2">
         </div>
     </section>
 
@@ -740,19 +758,19 @@
                     Sin embargo, desde los diálogos sostenidos con la rectora del Colegio Técnico Microempresarial El Carmen, se abrió una posibilidad distinta: comprender la armonización curricular no como la creación de nuevos instrumentos, sino como el fortalecimiento y resignificación de lo que ya existe. Este enfoque permitió avanzar hacia la incorporación de la política educativa del PTAFI 3.0 en el PEI.
                 </p>
                 <p>
-                    En este proceso, el proyecto <strong>“Creación de los Centros de Interés: Explorando Pasiones y Construyendo Saberes”</strong> se convirtió en un puente clave para articular la formación integral con el componente pedagógico institucional. A través de diálogos permanentes con los docentes líderes, se fortaleció una matriz integradora (Ver Anexo 3) que conecta áreas y dimensiones.
+                    En este proceso, el proyecto <strong>“Creación de los Centros de Interés: Explorando Pasiones y Construyendo Saberes”</strong> se convirtió en un puente clave para articular la formación integral con el componente pedagógico institucional. A través de diálogos permanentes con los docentes líderes, se fortaleció una matriz integradora (<a href="#anexo3" class="link-anexo" style="color: #2e026d !important; text-decoration: underline; font-weight: bold; cursor: pointer;">(Ver Anexo 3)</a>) que conecta áreas y dimensiones.
                 </p>
             </div>
 
             <div class="col-texto">
                 <p style="margin-bottom: 20px;">
-                    La experiencia evidenció que la armonización curricular no se decreta ni se impone; se construye en la conversación pedagógica, en la confianza y en el reconocimiento del saber docente. Aunque los Centros de Interés avanzaron inicialmente desde una lógica formativa por dimensiones (Ver Anexo 4), el análisis colectivo permitió reconocer que estas apuestas aún se desarrollaban de manera aislada del currículo de las áreas.
+                    La experiencia evidenció que la armonización curricular no se decreta ni se impone; se construye en la conversación pedagógica, en la confianza y en el reconocimiento del saber docente. Aunque los Centros de Interés avanzaron inicialmente desde una lógica formativa por dimensiones (<a href="#anexo4" class="link-anexo" style="color: #2e026d !important; text-decoration: underline; font-weight: bold; cursor: pointer;">(Ver Anexo 4)</a>), el análisis colectivo permitió reconocer que estas apuestas aún se desarrollaban de manera aislada del currículo de las áreas.
                 </p>
                 <p style="margin-bottom: 20px; font-weight: 500; color: var(--accent-color);">
                     Este hallazgo fue clave. A partir de octubre del año anterior, se inició un proceso más intencionado y, por momentos, tensionante de armonización curricular con todos los docentes.
                 </p>
                 <p>
-                    El ejercicio de analizar lo que ya se venía haciendo y dialogar sobre cómo articularlo a los planes de área resultó profundamente significativo. La jornada de formación denominada <strong>“Articulación del Plan de Área con PTAFI 3.0”</strong> (Ver Anexo 5) marcó un punto de inflexión: los docentes líderes asumieron un rol protagónico, aportando desde su área para ampliar y resignificar estos aprendizajes.
+                    El ejercicio de analizar lo que ya se venía haciendo y dialogar sobre cómo articularlo a los planes de área resultó profundamente significativo. La jornada de formación denominada <strong>“Articulación del Plan de Área con PTAFI 3.0”</strong> (<a href="#anexo5" class="link-anexo" style="color: #2e026d !important; text-decoration: underline; font-weight: bold; cursor: pointer;">(Ver Anexo 5)</a>) marcó un punto de inflexión: los docentes líderes asumieron un rol protagónico, aportando desde su área para ampliar y resignificar estos aprendizajes.
                 </p>
             </div>
         </div>
@@ -761,10 +779,10 @@
         <div class="slider-outer-wrapper">
             <button class="slider-nav prev-btn" onclick="scrollSlider('slider2', -1)">&#10094;</button>
             <div class="slider-wrapper" id="slider2">
-                <img src="https://static.wixstatic.com/media/e56c55_966f6adeb085448480dcd3aa77d1140a~mv2.jpg" alt="Armonización 1">
-                <img src="https://static.wixstatic.com/media/e56c55_d76264397f3448ddb6f11b7f665117da~mv2.jpg" alt="Armonización 2">
-                <img src="https://static.wixstatic.com/media/e56c55_e9aea2fb5b8348a7921e09d4441b5e9c~mv2.jpg" alt="Armonización 3">
-                <img src="https://static.wixstatic.com/media/e56c55_ea36f613d1394832bf49cd90f7e595cb~mv2.jpg" alt="Armonización 4">
+                <img src="https://static.wixstatic.com/media/e56c55_8c31ac800ccc42a4a4b30978a413bf0b~mv2.jpg" alt="Armonización 1">
+                <img src="https://static.wixstatic.com/media/e56c55_26f2fd319f464cc3aaa9b596f62969c6~mv2.jpg" alt="Armonización 2">
+                <img src="https://static.wixstatic.com/media/e56c55_e0cbbc27d8ce43a2aabba03d1e95faf0~mv2.jpg" alt="Armonización 3">
+                <img src="https://static.wixstatic.com/media/e56c55_848a581db8274514a931f570f105a0bd~mv2.jpg" alt="Armonización 4">
             </div>
             <button class="slider-nav next-btn" onclick="scrollSlider('slider2', 1)">&#10095;</button>
         </div>
@@ -777,17 +795,17 @@
         <div class="flex-images">
             <div style="flex: 1; text-align: center;">
                 <p style="font-size: 0.8rem; margin-bottom: 5px;">Educación CRESE y ajustes planes de aula (Sedes B, D y E)</p>
-                <img src="https://static.wixstatic.com/media/e56c55_19539c3862f24936b65a81791b3c547e~mv2.jpg" alt="CRESE" style="height: 300px; width: 100%;">
+                <img src="https://static.wixstatic.com/media/e56c55_f458971824374d779a4e14decb1a2b46~mv2.jpg" alt="CRESE" style="height: 300px; width: 100%;">
             </div>
             <div style="flex: 1; text-align: center;">
                 <p style="font-size: 0.8rem; margin-bottom: 5px;">Formación y ajuste unidad Pensamiento Matemático</p>
-                <img src="https://static.wixstatic.com/media/e56c55_741d0f1d93a64cccb7d59aefe5f766d9~mv2.jpg" alt="Mate" style="height: 300px; width: 100%;">
+                <img src="https://static.wixstatic.com/media/e56c55_bfbc31c6bd974af8aefdfde1ca8f188f~mv2.jpg" alt="Mate" style="height: 300px; width: 100%;">
             </div>
         </div>
 
         <h3 class="title-caps">Vínculo con la Comunidad:</h3>
         <p style="text-align: center; font-size: 0.9rem;">Reunión con padres de Familia para vincularlos a la formación integral.</p>
-        <img src="https://static.wixstatic.com/media/e56c55_3994a79b9f8c41fcba96d7d9e1d18ca9~mv2.jpg" alt="Padres" class="content-img">
+        <img src="https://static.wixstatic.com/media/e56c55_1a33be7f3feb4ddab54b62240a98fbee~mv2.jpg" alt="Padres" class="content-img">
     </section>
 
     <section id="logros">
@@ -858,43 +876,105 @@
                 </div>
             </div>
         </div>
-    </section>
+        <section style="padding: 40px 0; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 800px; position: relative; group">
+        
+        <div id="videoContainer" style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #000; cursor: pointer;">
+            
+            <video id="mainVideo" 
+                poster="https://static.wixstatic.com/media/e56c55_65f7216906e440159da0064f4a1e4000~mv2.png" 
+                style="width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover;">
+                <source src="https://video.wixstatic.com/video/e56c55_47b30a8d60604517bcef613e0a49169c/480p/mp4/file.mp4" type="video/mp4">
+            </video>
 
-   <section id="anexos">
-        <h2 style="margin-bottom: 40px;">Anexos</h2>
-        <div class="anexos-grid">
-            <div class="anexo-item">
-                <p>ANEXO 1. Plan de Formación Integral 2025</p>
-                <img src="https://static.wixstatic.com/media/e56c55_57fa801b8d93461493f1a32c862645d2~mv2.jpg" alt="Anexo 1" style="height: 180px; object-fit: cover; width: 100%;">
-            </div>
-
-            <div class="anexo-item">
-                <p>ANEXO 2. Matriz de Balance de los CI</p>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <img src="https://static.wixstatic.com/media/e56c55_6cae661fb99d41858848bd7bb0cd0f49~mv2.png" alt="Anexo 2-1">
-                    <img src="https://static.wixstatic.com/media/e56c55_6ba40d8378904026aaa57be70eee1e0c~mv2.png" alt="Anexo 2-2">
+            <div id="videoOverlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                <div style="width: 80px; height: 80px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(240, 171, 252, 0.6); transition: transform 0.3s ease;">
+                    <div style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid #2e026d; margin-left: 8px;"></div>
                 </div>
-            </div>
-
-            <div class="anexo-item">
-                <p>ANEXO 3. Matriz Integradora CRESE y Centros de Interés</p>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <img src="https://static.wixstatic.com/media/e56c55_391b3bb869834ce8a95d68349c1afecb~mv2.jpg" alt="Anexo 3-1">
-                    <img src="https://static.wixstatic.com/media/e56c55_caeffe549f4f4d3c907b7372f99138a7~mv2.jpg" alt="Anexo 3-2">
-                </div>
-            </div>
-
-            <div class="anexo-item">
-                <p>ANEXO 4. Articulación Curricular por Dimensiones Humanas</p>
-                <img src="https://static.wixstatic.com/media/e56c55_f1695857fcca4d538dc4001aba586e38~mv2.png" alt="Anexo 4">
-            </div>
-
-            <div class="anexo-item">
-                <p>ANEXO 5. Articulación Plan de Área (Lengua Castellana)</p>
-                <img src="https://static.wixstatic.com/media/e56c55_e001fc263d6449d884d5abfd903da5b5~mv2.png" alt="Anexo 5">
             </div>
         </div>
+    </div>
+</section>
+
+<script>
+    const video = document.getElementById('mainVideo');
+    const overlay = document.getElementById('videoOverlay');
+    const container = document.getElementById('videoContainer');
+
+    container.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            video.controls = true; // Muestra los controles nativos una vez inicia
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none'; // Evita que el botón bloquee los controles
+        } else {
+            video.pause();
+        }
+    });
+
+    // Por si el usuario pausa el video con los controles nativos, que no reaparezca el botón grande inmediatamente (opcional)
+    video.addEventListener('pause', function() {
+        if (video.currentTime === 0) { // Solo si vuelve al inicio
+             overlay.style.opacity = '1';
+             overlay.style.pointerEvents = 'auto';
+        }
+    });
+</script>
     </section>
+
+<section id="anexos" style="padding: 60px 0; max-width: 900px; margin: 0 auto;">
+    <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: var(--accent-color);">Anexos</h2>
+    
+    <div class="anexos-stack" style="display: flex; flex-direction: column; gap: 80px;">
+        
+        <div id="anexo1" class="anexo-item" style="text-align: center; scroll-margin-top: 100px;">
+            <p style="font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+                ANEXO 1. Plan de Formación Integral 2025
+            </p>
+            <img src="https://static.wixstatic.com/media/e56c55_2414f3774c184456826435364f0553c1~mv2.jpg" 
+                 alt="Anexo 1" 
+                 style="width: 70%; max-width: 800px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+        </div>
+
+        <div id="anexo2" class="anexo-item" style="text-align: center; scroll-margin-top: 100px;">
+            <p style="font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+                ANEXO 2. Matriz de Balance de los CI
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                <img src="https://static.wixstatic.com/media/e56c55_f1a425d7d5c14dfeb0a077c326207bcf~mv2.png" alt="Anexo 2-1" style="width: 100%; max-width: 800px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                <img src="https://static.wixstatic.com/media/e56c55_c1b6f70e8d4247fab8b7f0539b6aa0d8~mv2.png" alt="Anexo 2-2" style="width: 100%; max-width: 800px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+
+        <div id="anexo3" class="anexo-item" style="text-align: center; scroll-margin-top: 100px;">
+            <p style="font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+                ANEXO 3. Matriz Integradora CRESE y Centros de Interés
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                <img src="https://static.wixstatic.com/media/e56c55_828885f4078649e2ae92a68c25bc6ed5~mv2.jpg" alt="Anexo 3-1" style="width: 100%; max-width: 800px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                <img src="https://static.wixstatic.com/media/e56c55_5d781244bb434d9eb2c73ca0a7b999f1~mv2.jpg" alt="Anexo 3-2" style="width: 100%; max-width: 800px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+
+        <div id="anexo4" class="anexo-item" style="text-align: center; scroll-margin-top: 100px;">
+            <p style="font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+                ANEXO 4. Articulación Curricular por Dimensiones Humanas
+            </p>
+            <img src="https://static.wixstatic.com/media/e56c55_1e17e13f471b4b199c754c6211f5e212~mv2.png" 
+                 alt="Anexo 4" 
+                 style="width: 100%; max-width: 800px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        </div>
+
+        <div id="anexo5" class="anexo-item" style="text-align: center; scroll-margin-top: 100px;">
+            <p style="font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+                ANEXO 5. Articulación Plan de Área (Lengua Castellana)
+            </p>
+            <img src="https://static.wixstatic.com/media/e56c55_6b9c8dc567514c17ae01aa73d94e37ec~mv2.png" 
+                 alt="Anexo 5" 
+                 style="width: 100%; max-width: 800px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        </div>
+    </div>
+</section>
 </div>
 
 <div id="imageModal">
