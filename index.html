@@ -3,429 +3,892 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Héctor Villanueva | Honda Elite Sales</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Travesía pedagógica PTAFI 3.0 - Colegio Técnico Microempresarial El Carmen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --neon-blue: #00f2ff;
-            --electric-blue: #0066ff;
-            --glass-bg: rgba(10, 10, 15, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary-purple: #6a11cb;
+            --secondary-purple: #2575fc;
+            --deep-purple: #2e026d;
+            --purple-box: #4c1d95;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --text-color: #ffffff;
+            --accent-color: #f0abfc;
+            --card-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         }
-        
-        html {
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: #020205;
-            color: #ffffff;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, #1e1b4b, #4338ca, #5b21b6, #2e026d);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-        }
-
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.6);
+        .main-header {
+            background: rgba(15, 12, 41, 0.8);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 242, 255, 0.15);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .text-neon {
-            color: var(--neon-blue);
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 0 20px;
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.15) 0%, rgba(2, 2, 5, 0) 70%);
-        }
-
-        .input-glass {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border-radius: 50px;
             transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
         }
 
-        .input-glass:focus {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
-            outline: none;
+        .nav-link:hover {
+            color: white;
+            background: rgba(168, 85, 247, 0.3);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        .container {
+            max-width: 1100px; 
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        section {
+            padding: 60px 0 20px;
         }
 
-        .peer:checked + .checkbox-card {
-            background: rgba(0, 242, 255, 0.1);
-            border-color: var(--neon-blue);
-            color: var(--neon-blue);
+        header {
+            padding: 40px 0;
+            margin-bottom: 40px;
         }
 
-        .stat-card:hover i {
-            transform: scale(1.1);
-            color: var(--neon-blue);
-            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.6));
+        h1, h2, h3, .title-caps {
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        h1 { font-size: 2rem; margin-top: 10px; }
+        
+        h2 { 
+            font-size: 1.6rem; 
+            color: #ffffff;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-color);
+            border-right: 5px solid var(--accent-color);
+            display: block;
+            width: fit-content;
+            margin: 0 auto 30px auto;
+        }
+
+        h3 { font-size: 1.3rem; margin-top: 25px; margin-bottom: 15px; }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+
+        .logos-container img {
+            max-height: 70px;
+            width: auto;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+        }
+
+        img, .video-thumb {
+            max-width: 100%;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 20px auto;
+        }
+
+        img:hover, .video-thumb:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .content-img {
+            max-height: 350px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .flex-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .flex-images img {
+            height: 350px; 
+            width: auto;
+            object-fit: cover;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Layout Especial: Texto e Izquierda, Video a Derecha */
+        .split-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin: 40px 0;
+        }
+
+        .split-text {
+            flex: 1.2;
+        }
+
+        .split-media {
+            flex: 0.8;
+            position: sticky;
+            top: 100px;
+        }
+
+        .ci-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .ci-card {
+            background: var(--card-gradient);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 160px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            justify-content: center;
+        }
+
+        .ci-number {
+            font-weight: 900;
+            font-size: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .logros-box {
+            background-color: var(--purple-box);
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .logros-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .logros-icon { color: var(--accent-color); font-size: 1.2rem; margin-top: 3px; }
+
+        .cierre-box {
+            background-color: var(--deep-purple);
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .cierre-box h2 {
+            background: transparent;
+            border: none;
+            margin-bottom: 20px;
+            padding: 0;
+        }
+
+        .cierre-text {
+            color: #ffffff;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #imageModal .modal-content {
+            max-height: 90vh;
+            max-width: 95vw;
+        }
+
+        .author-info {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .anexos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .anexo-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+        
+        .anexo-item p {
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Slider Styles */
+        .slider-outer-wrapper {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .slider-wrapper {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            gap: 15px;
+            padding: 10px 0 20px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) rgba(0,0,0,0.2);
+        }
+
+        .slider-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+        .slider-wrapper::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+
+        .slider-wrapper img {
+            height: 350px;
+            width: auto;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            margin: 0;
+            border: 2px solid var(--glass-border);
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .slider-nav:hover { background: var(--accent-color); }
+        .prev-btn { left: -10px; }
+        .next-btn { right: -10px; }
+
+        p { margin-bottom: 1.2rem; text-align: justify; }
+
+        @media (max-width: 992px) {
+            .split-layout { flex-direction: column; }
+            .split-media { position: relative; top: 0; width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-wrap: wrap; gap: 8px; }
+            .nav-link { font-size: 0.6rem; padding: 6px 12px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.3rem; padding: 10px 20px; }
+            .slider-wrapper img { height: 250px; }
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Luxury Nav -->
-    <nav class="fixed w-full z-50 px-4 md:px-8 py-5">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-4 md:px-6 py-3 border-white/5">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                    <img src="https://download-warehouse.sketchup.com/warehouse/v1.0/content/public/45a93680-eee7-4478-a8fb-9145071daec0" alt="Logo" class="w-8 h-8 object-contain">
-                </div>
-                <span class="font-extrabold tracking-tighter text-lg md:text-xl uppercase">Héctor <span class="text-blue-500 italic">villanueva</span></span>
-            </div>
-            <div>
-                <a href="#precual" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all uppercase tracking-widest shadow-lg shadow-blue-900/20">
-                    Iniciar Precualificación
-                </a>
-            </div>
-        </div>
+<header class="main-header">
+    <nav class="nav-container">
+        <a href="#apertura" class="nav-link">Inicio</a>
+        <a href="#contexto" class="nav-link">Contexto</a>
+        <a href="#ejes" class="nav-link">Ejes</a>
+        <a href="#logros" class="nav-link">Logros</a>
+        <a href="#anexos" class="nav-link">Anexos</a>
     </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden hero-gradient">
-        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
-        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full"></div>
+<div class="container">
+   <header style="text-align: center; padding: 60px 20px; border-bottom: 1px solid rgba(240, 171, 252, 0.2); background: radial-gradient(circle at center, rgba(106, 17, 203, 0.1) 0%, transparent 70%);">
+        
+        <div class="author-info" style="letter-spacing: 4px; font-weight: 700; color: var(--accent-color); margin-bottom: 20px; font-size: 0.9rem;">
+            — NARRATIVA PEDAGÓGICA —
+        </div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full border-blue-500/20">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-                        </span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-cyan-400">Frecuente Vendedor del Mes</span>
-                    </div>
-                    
-                    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none">
-                        TU PRÓXIMO <br>
-                        <span class="text-neon italic">HONDA</span> COMIENZA AQUÍ.
-                    </h1>
-                    
-                    <p class="text-xl text-gray-400 max-w-xl leading-relaxed">
-                        Experimenta el proceso de compra más profesional y transparente. Especialista en Honda y usados certificados con <span class="text-white font-semibold">aprobación inmediata</span> para todo tipo de crédito.
+        <h1 style="max-width: 900px; margin: 0 auto 40px auto; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; font-weight: 900; background: linear-gradient(to right, #fff, var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Travesía pedagógica de la Ruta PTAFI 3.0 en el Colegio Técnico Microempresarial El Carmen: <span style="display: block; font-weight: 400; font-style: italic; font-size: 0.6em; margin-top: 10px; color: #fff; -webkit-text-fill-color: white;">Entre la incertidumbre, la apuesta colectiva y la formación integral</span>
+        </h1>
+        
+        <div style="width: 60px; height: 3px; background: var(--accent-color); margin: 0 auto 40px auto; border-radius: 2px;"></div>
+
+        <div class="logos-container">
+            <img src="https://static.wixstatic.com/media/e56c55_d9abad14233a49b4b1dd5b43109a3331~mv2.jpg" alt="Logo MinEducación">
+            <img src="https://static.wixstatic.com/media/e56c55_c417dd1a1a07498b972f9cb4d7b1eba1~mv2.jpeg" alt="Logo Colegio">
+            <img src="https://static.wixstatic.com/media/e56c55_21f931fac2ac4354829d8479815c34c0~mv2.png" alt="Logo PTAFI">
+        </div>
+
+        <div class="author-info" style="display: flex; flex-direction: column; gap: 5px; font-size: 1.1rem; letter-spacing: 0.5px; text-align: center; align-items: center;">
+    <p style="margin: 0; font-weight: 700; font-size: 1.4rem; color: #fff;">MAYURY BURGOS DUARTE</p>
+    <p style="margin: 0; opacity: 0.8; font-weight: 400;">Docente Tutora PTAFI 3.0</p>
+    
+    <div style="margin: 15px 0;">
+        <p style="margin: 0; color: var(--accent-color); font-weight: 700; font-size: 1rem; letter-spacing: 1px;">COLEGIO TÉCNICO MICROEMPRESARIAL EL CARMEN</p>
+    </div>
+    <div style="margin: 15px 0;">
+        <p style="margin: 0; font-size: 0.9rem; opacity: 0.7;">SECRETARÍA DE EDUCACIÓN DE FLORIDABLANCA</p>
+    </div>
+
+    <p style="margin: 10px 0 0 0; font-size: 0.85rem; opacity: 0.6; border: 1px solid rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 30px;">
+        FEBRERO 2025 — FEBRERO 2026
+    </p>
+</div>
+
+    <section id="apertura">
+        <h2>Apertura narrativa: cuando la certeza no existe, pero la apuesta sí</h2>
+        <section id="introduccion" style="padding: 60px 0;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <span style="color: var(--accent-color); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 700;"></span>
+            <div style="width: 50px; height: 2px; background: var(--accent-color); margin: 15px auto;"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 50px; line-height: 1.8; text-align: justify;">
+            
+            <div class="intro-col">
+                <p style="font-size: 1.2rem; color: var(--accent-color); font-weight: 500; margin-bottom: 25px; line-height: 1.6; border-left: 4px solid var(--accent-color); padding-left: 20px;">
+                    Este escrito no pretende tener tintes de tragedia. Es, más bien, el relato de una travesía pedagógica vivida desde el rol de una docente tutora que sigue creyendo —aun en medio de la incertidumbre— que la escuela puede ser un lugar donde la vida tenga sentido. Un lugar donde la máxima inspiración de un maestro continúa siendo sus estudiantes.
+                </p>
+                <p>
+                    Desde que asumí el rol de docente tutora en el año 2024, el mayor desafío no ha sido qué enseñar, sino cómo acompañar sin imponer, cómo leer las vivencias del aula sin juzgarlas, cómo reflexionar colectivamente y construir saber pedagógico en comunidad. 
+                </p>
+            </div>
+
+            <div class="intro-col">
+                <p style="margin-bottom: 25px;">
+                    Con el paso del tiempo he comprendido que, en esta labor, aprendemos tanto como acompañamos: de los maestros, de los directivos, de los estudiantes, de los formadores y también de los errores. No existen fórmulas mágicas. Existen dudas, resistencias, creatividad, ajustes constantes y, sobre todo, humanidad.
+                </p>
+                
+                <div style="background: rgba(255, 255, 255, 0.07); padding: 30px; border-radius: 20px; border: 1px dashed rgba(240, 171, 252, 0.4);">
+                    <p style="margin-bottom: 15px; font-weight: 700;">Febrero de 2025 no inició con certezas. Inició con preguntas profundas:</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 15px; display: flex; gap: 10px;">
+                            <span style="color: var(--accent-color);">¿</span>
+                            <span>cómo lograr que la formación integral dejará de ser un discurso institucional y se convirtiera en una experiencia cotidiana en el Colegio Técnico Microempresarial El Carmen?</span>
+                        </li>
+                        <li style="display: flex; gap: 10px;">
+                            <span style="color: var(--accent-color);">¿</span>
+                            <span>Cómo resignificar el tiempo escolar cuando los recursos son limitados, los espacios escasos y las demandas del sistema educativo parecen ir en otra dirección?</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section>
+        <h2>Cuando lo imposible se volvió posibilidad</h2>
+        <p>Uno de los hitos más significativos de esta travesía ocurrió cuando, a pesar de considerar casi imposible la creación de Centros de Interés por limitaciones de espacio y recursos, la rectora Alba Lucía Delgado abrió la puerta a intentarlo. Aquella decisión, sencilla en apariencia, marcó un punto de quiebre institucional.</p>
+        <p>En una reunión convocada con siete docentes que decidieron poner su vocación al servicio de los estudiantes —danza, radioteatro, robótica, bilingüismo, club de lectura y pensamiento matemático— comenzó a gestarse una apuesta colectiva. No teníamos escenarios ideales ni aulas especializadas. Teníamos voluntad, creatividad y una convicción compartida: cuando se quiere transformar la escuela, se empieza con lo que se tiene.</p>
+
+        <h3 class="title-caps">Equipo Líder de los Centros de Interés:</h3>
+        <img src="https://static.wixstatic.com/media/e56c55_d8c5a6177c5b41678ec424360b29d2b5~mv2.jpg" alt="Equipo Líder" class="content-img">
+
+        <p>El primer paso lo dio la profesora Dora Inés Cortés, quien convocó a estudiantes de grado décimo y undécimo para conformar el Centro de Interés de Radioteatro. El espacio asignado fue la terraza de la sede A, lejos de ser un lugar cómodo o acondicionado. Sin embargo, allí, entre micrófonos improvisados y condiciones poco favorables, los estudiantes comenzaron a construir sus apuestas teatrales, podcasts y relatos sonoros, demostrando que el aprendizaje no depende exclusivamente de la infraestructura, sino del sentido que se le otorgue al proceso.</p>
+
+        <h3 class="title-caps">Centro de Interés de Radioteatro:</h3>
+        <img src="https://static.wixstatic.com/media/e56c55_00f48a1944f94dea929b07979ef187f4~mv2.jpg" alt="Radioteatro" class="content-img">
+
+        <p>De manera progresiva, los demás Centros de Interés fueron tomando forma. Alrededor de 140 estudiantes de diferentes niveles educativos participaron activamente, extendiendo incluso algunas experiencias —como pensamiento matemático y danza— hacia la primaria. Lo que inició como una apuesta incierta se convirtió en un espacio de encuentro, diálogo y construcción colectiva.</p>
+    </section>
+
+    <section id="contexto">
+        <h2>Contexto institucional y sentido de la Ruta PTAFI 3.0</h2>
+        <section id="contexto" style="padding: 60px 0; background: rgba(255, 255, 255, 0.02);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; line-height: 1.8; text-align: justify;">
+            
+            <div class="contexto-col">
+                <div style="margin-bottom: 30px;">
+                    <span style="background: var(--accent-color); color: #2e026d; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Antecedentes</span>
+                    <p style="margin-top: 20px;">
+                        La implementación de la Ruta PTAFI 3.0 en el Colegio Técnico Microempresarial El Carmen durante el año 2025 se apoyó en los aprendizajes y reflexiones construidos en 2024, particularmente a partir de la lectura de contexto, la consolidación del equipo dinamizador y la necesidad de resignificar el tiempo escolar desde una perspectiva de formación integral.
                     </p>
-
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="#precual" class="px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] text-center uppercase tracking-wider">
-                            INICIAR PRECUALIFICACIÓN
-                        </a>
-                    </div>
                 </div>
 
-                <div class="relative">
-                    <div class="relative z-10 glass-dark rounded-[40px] p-2 border-white/10 overflow-hidden group">
-                        <img src="https://scontent.fbga1-3.fna.fbcdn.net/v/t51.82787-15/609657351_18167780557380726_3156032717856553477_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE8jEnlE2xnxKfFyZ4x7urFYazhrc89H3VhrOGtzz0fdV-1jFjm5Diq922qGndvEnx9cTW6lzTR3_jy-YH5udTm&_nc_ohc=B57yYwjFSB4Q7kNvwE-suoc&_nc_oc=AdnqXR0QeXk4XwUXbc9NBUKM0bSzoiB5G8cfvsVSCFmCLaMdFrdaKXf3EP0hIXzsiv0&_nc_zt=23&_nc_ht=scontent.fbga1-3.fna&_nc_gid=TXOAwhD0iumBgadHXKHMQw&oh=00_AfvXTuNfxJTePCKrjHuHjwYX1QG-WGNnE2JX37I4e8UShw&oe=69939228" 
-                             alt="Héctor Villanueva" 
-                             class="w-full h-full object-cover rounded-[34px] transition-transform duration-700 group-hover:scale-105">
-                        
-                        <!-- Minimal Photo Overlay -->
-                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
-                            <h3 class="text-3xl font-black italic uppercase tracking-tighter">Héctor Villanueva</h3>
-                            <p class="text-blue-400 text-xs font-bold uppercase tracking-[0.3em]">Ejecutivo de Ventas</p>
-                        </div>
+                <div style="background: var(--card-gradient); padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 20px;">
+                    <div style="font-size: 2.5rem;">🏫</div>
+                    <div>
+                        <p style="margin: 0; font-weight: 700; font-size: 1.2rem;">5 Sedes Educativas</p>
+                        <p style="margin: 0; opacity: 0.9;">4 Urbanas | 1 Rural</p>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 5px;">
+                            <strong>2000 Estudiantes</strong> (10% Población Venezolana)
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Professional Stats - Icons Updated -->
-    <section id="experiencia" class="py-24 relative">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="group space-y-6 stat-card">
-                    <i class="fas fa-certificate text-5xl text-blue-500/80 transition-all duration-300"></i>
-                    <h4 class="text-3xl font-black italic uppercase tracking-tighter leading-none">Experiencia <br><span class="text-blue-500">Probada</span></h4>
-                    <p class="text-gray-400 leading-relaxed border-l-2 border-blue-500/20 pl-6">Vendedor del mes en múltiples ocasiones. Capacitado para asesorarte en la mejor inversión para tu futuro.</p>
+            <div class="contexto-col">
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); padding: 25px; border-radius: 20px; margin-bottom: 25px;">
+                    <p style="margin: 0;">
+                        Las condiciones socioeconómicas, marcadas por empleos informales, desempleo y problemáticas sociales asociadas al uso del tiempo libre, consumo de sustancias e inseguridad, configuran un escenario donde la escuela se convierte en un espacio de <strong>contención, resiliencia y posibilidad.</strong>
+                    </p>
                 </div>
-                <div class="group space-y-6 stat-card">
-                    <i class="fas fa-shield-check text-5xl text-blue-500/80 transition-all duration-300"></i>
-                    <h4 class="text-3xl font-black italic uppercase tracking-tighter leading-none">Negocio <br><span class="text-blue-500">Garantizado 🤝</span></h4>
-                    <p class="text-gray-400 leading-relaxed border-l-2 border-blue-500/20 pl-6">Aquí el proceso es claro, sin estrés y con acompañamiento de principio a fin. El mejor negocio en Puerto Rico.</p>
-                </div>
-                <div class="group space-y-6 stat-card">
-                    <i class="fas fa-headset text-5xl text-blue-500/80 transition-all duration-300"></i>
-                    <h4 class="text-3xl font-black italic uppercase tracking-tighter leading-none">Asistencia <br><span class="text-blue-500">Extendida</span></h4>
-                    <p class="text-gray-400 leading-relaxed border-l-2 border-blue-500/20 pl-6">Mi relación con el cliente no termina en la entrega. Ofrezco asistencia continua y empatía en cada paso.</p>
-                </div>
+
+                <p style="margin-bottom: 20px;">
+                    En este contexto, la Ruta PTAFI 3.0 asumió el desafío de fortalecer la formación integral a través de diversas estrategias: Centros de Interés, proyectos pedagógicos, educación CRESE, acompañamiento a directivos docentes, armonización curricular y transformación de las prácticas pedagógicas.
+                </p>
+                
+                <p style="font-style: italic; border-left: 3px solid var(--accent-color); padding-left: 15px; color: var(--accent-color);">
+                    No se trató de sumar actividades, sino de repensar la escuela como un entramado de relaciones, saberes y emociones. Alrededor de esta estrategia se entretejen los siguientes ejes:
+                </p>
             </div>
         </div>
+    </div>
+</section>
+
+    <section id="ejes">
+        <h2>Eje 1: El Plan de Formación Integral como apuesta institucional</h2>
+        <p>El Plan de Formación Integral implementado en 2025 (Ver Anexo 1) partió del reconocimiento de que la educación no puede reducirse al dominio de contenidos académicos. La formación integral implica el desarrollo de habilidades socioemocionales, comunicativas, artísticas, tecnológicas y ciudadanas, en diálogo permanente con el currículo. Desde esta mirada, se estructuraron siete Centros de Interés:</p>
+        
+        <div class="ci-grid">
+            <div class="ci-card"><div class="ci-number">1</div>Radio Teatro</div>
+            <div class="ci-card"><div class="ci-number">2</div>Pensamiento Matemático</div>
+            <div class="ci-card"><div class="ci-number">3</div>Bilingüismo</div>
+            <div class="ci-card"><div class="ci-number">4</div>Robótica (MinTIC)</div>
+            <div class="ci-card"><div class="ci-number">5</div>Danza Folclórica</div>
+            <div class="ci-card"><div class="ci-number">6</div>Club de Lectura (PNLEO)</div>
+            <div class="ci-card" style="border: 2px solid var(--accent-color);"><div class="ci-number">7</div>Proyecto Pedagógico “Vivir Sabroso en la Escuela”</div>
+        </div>
+
+        <p>Estos espacios permitieron a los estudiantes explorar intereses, fortalecer talentos y resignificar su relación con el aprendizaje, mientras los docentes transitaban de prácticas centradas en lo procedimental hacia metodologías activas y experienciales.</p>
+
+        <h3 class="title-caps">Reflexión sobre la Formación Integral y ajustes al plan:</h3>
+        <div class="flex-images">
+            <img src="https://static.wixstatic.com/media/e56c55_436887aedfbe4e86aead53757de351d5~mv2.jpg" alt="Reflexión 1">
+            <img src="https://static.wixstatic.com/media/e56c55_36c6a068b21c4a988eb3a85f9ca9950d~mv2.jpg" alt="Reflexión 2">
+        </div>
     </section>
 
-    <!-- Funnel Form Section -->
-    <section id="precual" class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16 space-y-2">
-                    <h2 class="text-5xl font-black tracking-tighter italic uppercase leading-tight">Tu camino hacia un Honda nuevo <br> <span class="text-neon">comienza hoy</span></h2>
-                    <p class="text-gray-500 text-sm uppercase tracking-widest font-bold">Formulario de Precualificación</p>
+    <section>
+        <h2>Eje 2: Centros de Interés: cuando aprender vuelve a tener sentido</h2>
+        
+        <h3 class="title-caps">Los CI en movimiento:</h3>
+        <div class="slider-outer-wrapper">
+            <button class="slider-nav prev-btn" onclick="scrollSlider('slider1', -1)">&#10094;</button>
+            <div class="slider-wrapper" id="slider1">
+                <img src="https://static.wixstatic.com/media/e56c55_2678e838a0fc473fbbfd8fa5b37e349e~mv2.jpg" alt="CI 1">
+                <img src="https://static.wixstatic.com/media/e56c55_4027becf67ec4155a0207227612a7bbe~mv2.jpg" alt="CI 2">
+                <img src="https://static.wixstatic.com/media/e56c55_611f2d3688e8498c8822c27279f86cf0~mv2.jpg" alt="CI 3">
+                <img src="https://static.wixstatic.com/media/e56c55_0c5874944cc7405f8f322dd237f38b1f~mv2.jpg" alt="CI 4">
+                <img src="https://static.wixstatic.com/media/e56c55_85bfe571978045c090b4a45566ebdefa~mv2.jpg" alt="CI 5">
+                <img src="https://static.wixstatic.com/media/e56c55_430cb67b8c38482eb1b597695b01ace1~mv2.jpg" alt="CI 6">
+                <img src="https://static.wixstatic.com/media/e56c55_bca7ba24b8e044b1b0da0e373caf3338~mv2.jpg" alt="CI 7">
+            </div>
+            <button class="slider-nav next-btn" onclick="scrollSlider('slider1', 1)">&#10095;</button>
+        </div>
+
+        <p>Durante 2025, los Centros de Interés se consolidaron como una de las estrategias más significativas del proceso. Estudiantes, docentes y directivos coincidieron en que estos espacios fortalecieron el aprovechamiento del tiempo libre y promovieron aprendizajes del saber, saber hacer y saber ser. El trabajo en grupos pequeños permitió una relación más cercana entre docentes y estudiantes, favoreciendo la autonomía, el trabajo colaborativo y la confianza. Las encuestas de valoración evidencian altos niveles de satisfacción: un 65 % de los estudiantes manifestó sentirse más seguro para expresar sus ideas y talentos, lo cual refleja avances importantes en la dimensión socioemocional, como se muestra en el gráfico:</p>
+        
+        <img src="https://static.wixstatic.com/media/e56c55_b442ba321cda480b83d7a742a0e9c458~mv2.png" alt="Gráfico Valoración" class="content-img">
+
+        <h3 class="title-caps">Encuesta de Valoración de los CI:</h3>
+        <img src="https://static.wixstatic.com/media/e56c55_42855fb335c94466aa8ae18608a22092~mv2.png" alt="Encuesta" class="content-img">
+
+        <p>La gestión de recursos fue otro desafío superado colectivamente. Con el apoyo de la rectora y los recursos destinados a formación integral, se lograron adquirir materiales para pensamiento matemático, trajes para danza, micrófonos inalámbricos para teatro y kits de robótica, evidenciando que la gestión pedagógica también es una forma de liderazgo educativo. En la encuesta de satisfacción de los estudiantes un 60% dice que se contó con los recursos necesarios.</p>
+        
+        <img src="https://static.wixstatic.com/media/e56c55_e3e0997031104900b8d477e4f80d7d5a~mv2.png" alt="Encuesta Recursos" class="content-img">
+
+<section id="formacion">
+        <h2 style="margin-bottom: 40px;">Eje 2: Formación Integral: Centros de Interés y Educación CRESE</h2>
+        
+        <div class="split-container" style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+            
+            <div style="flex: 1.5; min-width: 300px; text-align: justify; line-height: 1.8;">
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 20px; border-left: 4px solid var(--accent-color); margin-bottom: 25px;">
+                    <p>
+                        De igual manera, se reconoce que las <strong>metodologías activas</strong> —como el aprendizaje basado en proyectos, el trabajo colaborativo, la pedagogía STEAM, la matemática recreativa, la multimodalidad y la expresión artística— se constituyeron en un factor clave para el fortalecimiento de competencias cognitivas, comunicativas, tecnológicas y socioemocionales. 
+                    </p>
+                    <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">
+                        Sin embargo, el balance también evidencia la necesidad de superar la visión aislada de los Centros de Interés, avanzando hacia una mayor articulación curricular con las áreas y asignaturas.
+                    </p>
                 </div>
 
-                <form id="proFunnel" class="glass-dark p-8 md:p-16 rounded-[40px] border-white/10 space-y-12">
+                <p style="margin-bottom: 20px;">
+                    Otro aspecto relevante es la reflexión sobre los <strong>tiempos escolares</strong>. De manera reiterada, los docentes manifiestan que una o dos horas semanales resultan insuficientes, lo que plantea como desafío la reorganización de horarios y la reducción de cruces entre Centros de Interés. El esfuerzo adicional de los docentes ha sido vital, pero no puede ser la única estrategia de sostenibilidad.
+                </p>
+
+                <div style="background: var(--card-gradient); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <p style="margin-bottom: 10px;">
+                        En cuanto a los recursos, es necesario fortalecer la gestión institucional y establecer protocolos claros de uso. Asimismo, se identifica como oportunidad estratégica la gestión de <strong>alianzas externas</strong>.
+                    </p>
+                    <p style="margin: 0; font-weight: 700; color: #fff; text-align: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; margin-top: 10px;">
+                        👉 Ver Anexo 2. Matriz de Balance Centros de Interés
+                    </p>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 280px; max-width: 380px; margin: 0 auto;">
+                <div id="videoTrigger" style="cursor: pointer; position: relative; width: 100%; height: 480px; background: #000; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 2px solid rgba(240, 171, 252, 0.2);">
                     
-                    <!-- Section: Identidad -->
-                    <div class="space-y-8">
-                        <div class="flex items-center gap-4 text-blue-400">
-                            <span class="w-8 h-8 rounded-full border border-blue-500 flex items-center justify-center text-xs font-bold">01</span>
-                            <h3 class="text-xl font-bold uppercase tracking-wider">Información Personal</h3>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Nombre Completo</label>
-                                <input type="text" required class="input-glass w-full p-4 rounded-xl text-white" placeholder="Ej. Juan del Pueblo">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Teléfono de Contacto</label>
-                                <input type="tel" required class="input-glass w-full p-4 rounded-xl text-white" placeholder="787-000-0000">
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Correo Electrónico</label>
-                            <input type="email" required class="input-glass w-full p-4 rounded-xl text-white" placeholder="tuemail@ejemplo.com">
+                    <img src="https://static.wixstatic.com/media/e56c55_786821e12227428c8b8637c22c6b4680~mv2.png" 
+                         alt="Portada Video" 
+                         style="width: 100%; height: 100%; object-fit: contain; background-color: #1a1a1a;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.1);">
+                        <div class="play-button-container" style="width: 80px; height: 80px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 40px rgba(240, 171, 252, 0.4);">
+                            <div class="play-button-icon" style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid #2e026d; margin-left: 8px; transition: border-color 0.3s ease;"></div>
                         </div>
                     </div>
-
-                    <!-- Section: Edad y Co-deudor -->
-                    <div class="space-y-6">
-                        <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">¿Eres mayor de 21 años?</label>
-                        <div class="flex gap-8">
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="radio" name="age_req" value="yes" checked onclick="toggleParents(false)" class="w-5 h-5 accent-blue-500">
-                                <span class="text-sm font-medium">Sí, soy mayor</span>
-                            </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="radio" name="age_req" value="no" onclick="toggleParents(true)" class="w-5 h-5 accent-blue-500">
-                                <span class="text-sm font-medium">No (Requiere Codeudor)</span>
-                            </label>
-                        </div>
-                        
-                        <div id="parentInfo" class="hidden p-8 rounded-3xl bg-white/5 border border-white/10 space-y-6">
-                            <p class="text-xs text-blue-400 font-bold uppercase italic tracking-widest">Información requerida de padres:</p>
-                            <div class="grid md:grid-cols-1 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-[10px] uppercase tracking-widest text-gray-400">Nombre completo de Padre/Madre</label>
-                                    <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Nombre completo">
-                                </div>
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    <div class="space-y-2">
-                                        <label class="text-[10px] uppercase tracking-widest text-gray-400">Telefono de Contacto</label>
-                                        <input type="tel" class="input-glass w-full p-4 rounded-xl" placeholder="787-000-0000">
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label class="text-[10px] uppercase tracking-widest text-gray-400">Correo de Contacto</label>
-                                        <input type="email" class="input-glass w-full p-4 rounded-xl" placeholder="email@contacto.com">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section: El Vehículo -->
-                    <div class="space-y-8">
-                        <div class="flex items-center gap-4 text-blue-400">
-                            <span class="w-8 h-8 rounded-full border border-blue-500 flex items-center justify-center text-xs font-bold">02</span>
-                            <h3 class="text-xl font-bold uppercase tracking-wider">Tu Próximo Vehículo</h3>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Preferencia de Inventario</label>
-                            <select id="invType" onchange="toggleInvFields()" class="input-glass w-full p-4 rounded-xl">
-                                <option value="honda">Honda Nuevo</option>
-                                <option value="used">Usado Certificado (Cualquier Marca)</option>
-                            </select>
-                        </div>
-
-                        <div id="hondaModelsGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="HRV" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">HRV</div>
-                            </label>
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="CIVIC" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">CIVIC</div>
-                            </label>
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="ACCORD" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">ACCORD</div>
-                            </label>
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="CRV" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">CRV</div>
-                            </label>
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="PASSPORT" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">PASSPORT</div>
-                            </label>
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="PILOT" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">PILOT</div>
-                            </label>
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="ODYSSEY" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">ODYSSEY</div>
-                            </label>
-                            <label class="relative cursor-pointer">
-                                <input type="checkbox" name="honda_models" value="RIDGELINE" class="peer sr-only">
-                                <div class="checkbox-card p-4 rounded-xl border border-white/10 text-center text-xs font-bold transition-all hover:bg-white/5">RIDGELINE</div>
-                            </label>
-                        </div>
-
-                        <div id="usedFieldsGroup" class="hidden space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
-                                <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Año preferido">
-                                <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Marca / Modelo">
-                            </div>
-                            <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Presupuesto aproximado">
-                            <textarea class="input-glass w-full p-4 rounded-xl h-24" placeholder="Notas adicionales sobre el usado..."></textarea>
-                        </div>
-                    </div>
-
-                    <div class="space-y-8">
-                        <div class="flex items-center gap-4 text-blue-400">
-                            <span class="w-8 h-8 rounded-full border border-blue-500 flex items-center justify-center text-xs font-bold">03</span>
-                            <h3 class="text-xl font-bold uppercase tracking-wider">Perfil Financiero</h3>
-                        </div>
-
-                        <div class="space-y-6">
-                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">¿Tienes un auto para entregar (Trade-In)?</label>
-                            <div class="flex gap-6">
-                                <label class="flex items-center gap-2 cursor-pointer">
-                                    <input type="radio" name="trade_in" value="yes" onclick="toggleTradeIn(true)" class="w-5 h-5 accent-blue-500"> <span>Sí</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer">
-                                    <input type="radio" name="trade_in" value="no" checked onclick="toggleTradeIn(false)" class="w-5 h-5 accent-blue-500"> <span>No</span>
-                                </label>
-                            </div>
-                            
-                            <div id="tradeInComplex" class="hidden p-6 glass rounded-2xl space-y-4">
-                                <p class="text-xs font-bold text-blue-400 uppercase">Estado del Trade-In:</p>
-                                <div class="flex gap-4">
-                                    <label class="flex items-center gap-2"><input type="radio" name="trade_status" value="saldo" onclick="toggleDebt(false)"> Saldo</label>
-                                    <label class="flex items-center gap-2"><input type="radio" name="trade_status" value="debe" onclick="toggleDebt(true)"> Debe</label>
-                                </div>
-                                <div id="debtDetails" class="hidden grid md:grid-cols-2 gap-4">
-                                    <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="¿Cuánto debe?">
-                                    <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="Institución bancaria">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Pronto Disponible</label>
-                                <input type="text" class="input-glass w-full p-4 rounded-xl" placeholder="$0.00">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Lugar de Trabajo</label>
-                                <input type="text" required class="input-glass w-full p-4 rounded-xl" placeholder="Empresa o Profesión">
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">¿Cuándo deseas adquirir tu unidad?</label>
-                            <select class="input-glass w-full p-4 rounded-xl">
-                                <option>Inmediatamente</option>
-                                <option>Dentro de 7 días</option>
-                                <option>Este mes</option>
-                                <option>Planificando a futuro</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full py-6 bg-white text-black font-black text-2xl rounded-2xl transition-all hover:bg-blue-500 hover:text-white hover:scale-[1.02] active:scale-95 shadow-[0_20px_40px_rgba(255,255,255,0.1)] uppercase italic">
-                        ENVIAR MI SOLICITUD <i class="fas fa-arrow-right ml-3"></i>
-                    </button>
-                </form>
+                </div>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; opacity: 0.8; font-style: italic; color: var(--accent-color);">
+                    Click para reproducir experiencia
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Referral Program -->
-    <section id="referidos" class="py-24 relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="glass-dark p-1 rounded-3xl">
-                <div class="bg-gradient-to-r from-blue-900/60 to-black p-8 md:p-20 rounded-[22px] flex flex-col md:flex-row items-center justify-between gap-12">
-                    <div class="max-w-xl text-center md:text-left space-y-4">
-                        <h2 class="text-5xl font-extrabold italic tracking-tighter uppercase leading-none">¿Conoces a alguien <br><span class="text-blue-400">buscando auto?</span></h2>
-                        <p class="text-xl text-gray-300">Gana <span class="text-neon font-bold">$200 cash</span> por cada referido que cierre su negocio conmigo. Sin letras pequeñas.</p>
-                    </div>
-                    <div class="text-center bg-white/5 p-10 rounded-[40px] border border-white/10 backdrop-blur-md">
-                        <span class="text-8xl font-black text-white block mb-2 leading-none">$200</span>
-                        <span class="text-xs uppercase tracking-[0.4em] text-blue-400 font-bold">Por cada venta</span>
-                    </div>
+    <section>
+        <h2 style="margin-bottom: 40px;">Eje 3: Acompañar la Gestión: Entre el control y la Confianza</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; text-align: justify; line-height: 1.8; margin-bottom: 40px;">
+            
+            <div class="col-texto">
+                <p style="margin-bottom: 20px;">
+                    El acompañamiento a directivos docentes fue un componente clave de esta travesía. El liderazgo de la rectora <strong>Alba Lucía Delgado</strong> se destacó especialmente en la gestión de recursos e infraestructura, logro que se materializa en 2026 con la recuperación de la sede principal, después de seis años de espera.
+                </p>
+                <p style="border-left: 3px solid var(--accent-color); padding-left: 15px; background: rgba(255,255,255,0.03);">
+                    El diálogo pedagógico permitió avanzar significativamente en la implementación del Plan de Formación Integral, la educación CRESE y los procesos de armonización curricular. Sin embargo, también emergieron tensiones propias del sistema educativo: la necesidad de mantener el control administrativo, el temor al cambio y la dificultad para integrar proyectos transversales en estructuras ya consolidadas.
+                </p>
+            </div>
+
+            <div class="col-texto">
+                <p style="margin-bottom: 20px;">
+                    La reducción de horas asignadas a los docentes de Centros de Interés en 2026, priorizando la cobertura escolar, obligó a tomar decisiones difíciles. Esta situación puso a prueba la capacidad de adaptación de la ruta, exigiendo un análisis profundo sobre las prioridades institucionales.
+                </p>
+                <div style="background: rgba(168, 85, 247, 0.1); padding: 20px; border-radius: 15px;">
+                    <p style="margin: 0; font-style: italic;">
+                        Continuar solo con algunos Centros de Interés (<strong>Robótica, Pensamiento Matemático y Radioteatro</strong>) y buscar alternativas para que otros trasciendan hacia las aulas evidencia que la sostenibilidad de las apuestas pedagógicas sigue siendo uno de los mayores retos institucionales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <h3 class="title-caps">Reunión Consejo Académico 2025:</h3>
+        <p style="text-align: center; font-size: 0.9rem; opacity: 0.8;">Docentes de primaria, rectora Alba Lucia Delgado Rugeles y Coordinadora María Eugenia Baez</p>
+        <div class="flex-images">
+            <img src="https://static.wixstatic.com/media/e56c55_00f579ec6c5a446da75b4bcb931d5188~mv2.jpg" alt="Consejo 1">
+            <img src="https://static.wixstatic.com/media/e56c55_8e22f2c227194c62b92404b53fd98458~mv2.jpg" alt="Consejo 2">
+        </div>
+    </section>
+
+    <section id="armonizacion">
+        <h2>Eje 4. Armonización y articulación curricular: Entre la tensión del formato y la oportunidad pedagógica</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; text-align: justify; line-height: 1.8; margin-bottom: 40px;">
+            
+            <div class="col-texto">
+                <p style="margin-bottom: 20px;">
+                    La armonización curricular ha sido, sin duda, una de las piedras en el zapato en mi labor como docente tutora del PTAFI 3.0. Hablar de currículo suele generar resistencia en los maestros, quienes asocian este proceso con la aparición de nuevos formatos por diligenciar, más exigencias administrativas y poco tiempo para lo pedagógico. A esta tensión se suma la sobrecarga laboral de los coordinadores, lo que en ocasiones relega los espacios pedagógicos a un segundo plano frente a las urgencias del día a día escolar.
+                </p>
+                <p style="margin-bottom: 20px; border-left: 3px solid var(--accent-color); padding-left: 15px; background: rgba(255,255,255,0.03);">
+                    Sin embargo, desde los diálogos sostenidos con la rectora del Colegio Técnico Microempresarial El Carmen, se abrió una posibilidad distinta: comprender la armonización curricular no como la creación de nuevos instrumentos, sino como el fortalecimiento y resignificación de lo que ya existe. Este enfoque permitió avanzar hacia la incorporación de la política educativa del PTAFI 3.0 en el PEI.
+                </p>
+                <p>
+                    En este proceso, el proyecto <strong>“Creación de los Centros de Interés: Explorando Pasiones y Construyendo Saberes”</strong> se convirtió en un puente clave para articular la formación integral con el componente pedagógico institucional. A través de diálogos permanentes con los docentes líderes, se fortaleció una matriz integradora (Ver Anexo 3) que conecta áreas y dimensiones.
+                </p>
+            </div>
+
+            <div class="col-texto">
+                <p style="margin-bottom: 20px;">
+                    La experiencia evidenció que la armonización curricular no se decreta ni se impone; se construye en la conversación pedagógica, en la confianza y en el reconocimiento del saber docente. Aunque los Centros de Interés avanzaron inicialmente desde una lógica formativa por dimensiones (Ver Anexo 4), el análisis colectivo permitió reconocer que estas apuestas aún se desarrollaban de manera aislada del currículo de las áreas.
+                </p>
+                <p style="margin-bottom: 20px; font-weight: 500; color: var(--accent-color);">
+                    Este hallazgo fue clave. A partir de octubre del año anterior, se inició un proceso más intencionado y, por momentos, tensionante de armonización curricular con todos los docentes.
+                </p>
+                <p>
+                    El ejercicio de analizar lo que ya se venía haciendo y dialogar sobre cómo articularlo a los planes de área resultó profundamente significativo. La jornada de formación denominada <strong>“Articulación del Plan de Área con PTAFI 3.0”</strong> (Ver Anexo 5) marcó un punto de inflexión: los docentes líderes asumieron un rol protagónico, aportando desde su área para ampliar y resignificar estos aprendizajes.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="title-caps">Proceso de armonización curricular:</h3>
+        <div class="slider-outer-wrapper">
+            <button class="slider-nav prev-btn" onclick="scrollSlider('slider2', -1)">&#10094;</button>
+            <div class="slider-wrapper" id="slider2">
+                <img src="https://static.wixstatic.com/media/e56c55_966f6adeb085448480dcd3aa77d1140a~mv2.jpg" alt="Armonización 1">
+                <img src="https://static.wixstatic.com/media/e56c55_d76264397f3448ddb6f11b7f665117da~mv2.jpg" alt="Armonización 2">
+                <img src="https://static.wixstatic.com/media/e56c55_e9aea2fb5b8348a7921e09d4441b5e9c~mv2.jpg" alt="Armonización 3">
+                <img src="https://static.wixstatic.com/media/e56c55_ea36f613d1394832bf49cd90f7e595cb~mv2.jpg" alt="Armonización 4">
+            </div>
+            <button class="slider-nav next-btn" onclick="scrollSlider('slider2', 1)">&#10095;</button>
+        </div>
+
+        <h3 class="title-caps">Aprendizajes pedagógicos y colectivos</h3>
+        <p>Uno de los aprendizajes más valiosos de este proceso fue comprender que la Educación CRESE —especialmente el componente socioemocional— cobra sentido cuando se hace visible en las mallas curriculares, en la planeación de aula y en proyectos institucionales como Vivir Sabroso en la Escuela y la Cátedra de Paz. Hoy se evidencian avances concretos: propuestas didácticas integradoras desde las áreas, mayor coherencia entre discurso y práctica, y Centros de Interés que continúan fortaleciéndose como escenarios privilegiados para el aprendizaje significativo.</p>
+        <p>La construcción de la Matriz Integradora de Educación CRESE y Centros de Interés, articulada al componente pedagógico, permitió incluir acciones orientadas a profundizar en las dimensiones del ser y el saber de niñas, niños, jóvenes y adolescentes. En ella, la educación ciudadana, para la reconciliación, la convivencia, la acción climática y la educación antirracista se configuran como oportunidades para reflexionar sobre las prácticas de aula, mejorar las interacciones y fortalecer la participación estudiantil.</p>
+        <p>Este proceso no solo dejó productos visibles, sino una convicción compartida: la armonización curricular es un camino colectivo, progresivo y profundamente humano, que exige escucha, flexibilidad y una apuesta clara por la formación integral.</p>
+
+        <div class="flex-images">
+            <div style="flex: 1; text-align: center;">
+                <p style="font-size: 0.8rem; margin-bottom: 5px;">Educación CRESE y ajustes planes de aula (Sedes B, D y E)</p>
+                <img src="https://static.wixstatic.com/media/e56c55_19539c3862f24936b65a81791b3c547e~mv2.jpg" alt="CRESE" style="height: 300px; width: 100%;">
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <p style="font-size: 0.8rem; margin-bottom: 5px;">Formación y ajuste unidad Pensamiento Matemático</p>
+                <img src="https://static.wixstatic.com/media/e56c55_741d0f1d93a64cccb7d59aefe5f766d9~mv2.jpg" alt="Mate" style="height: 300px; width: 100%;">
+            </div>
+        </div>
+
+        <h3 class="title-caps">Vínculo con la Comunidad:</h3>
+        <p style="text-align: center; font-size: 0.9rem;">Reunión con padres de Familia para vincularlos a la formación integral.</p>
+        <img src="https://static.wixstatic.com/media/e56c55_3994a79b9f8c41fcba96d7d9e1d18ca9~mv2.jpg" alt="Padres" class="content-img">
+    </section>
+
+    <section id="logros">
+        <h2 style="margin-bottom: 40px;">Logros alcanzados en la implementación de la Ruta PTAFI 3.0</h2>
+        
+        <p style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.1rem; opacity: 0.9;">
+            El recorrido desarrollado entre febrero de 2025 y febrero de 2026 permitió evidenciar logros significativos en distintos niveles del proceso educativo, que dan cuenta del impacto progresivo de la Ruta PTAFI 3.0 en el Colegio Técnico Microempresarial El Carmen:
+        </p>
+
+        <div class="logros-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            
+            <div class="logros-item" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(240, 171, 252, 0.3); padding: 25px; border-radius: 20px; display: flex; flex-direction: column; gap: 15px; transition: transform 0.3s ease;">
+                <div style="font-size: 2rem; background: var(--accent-color); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #2e026d;">🏛️</div>
+                <span style="line-height: 1.5;">En primer lugar, se consolidó el Plan de Formación Integral como una apuesta institucional reconocida por docentes, directivos, estudiantes y familias. Los Centros de Interés dejaron de percibirse como actividades extracurriculares para convertirse en espacios formativos con sentido pedagógico, vinculados al desarrollo del ser, el saber y el hacer.</span>
+            </div>
+
+            <div class="logros-item" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(240, 171, 252, 0.3); padding: 25px; border-radius: 20px; display: flex; flex-direction: column; gap: 15px; transition: transform 0.3s ease;">
+                <div style="font-size: 2rem; background: var(--accent-color); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #2e026d;">🎨</div>
+                <span style="line-height: 1.5;">Un segundo logro relevante fue la participación activa de los estudiantes, quienes encontraron en los Centros de Interés un lugar para expresar talentos, fortalecer la confianza y construir identidad. Los resultados de las encuestas de valoración evidencian avances en la dimensión socioemocional, particularmente en la seguridad para expresar ideas, la autonomía y el trabajo colaborativo.</span>
+            </div>
+
+            <div class="logros-item" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(240, 171, 252, 0.3); padding: 25px; border-radius: 20px; display: flex; flex-direction: column; gap: 15px; transition: transform 0.3s ease;">
+                <div style="font-size: 2rem; background: var(--accent-color); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #2e026d;">🤝</div>
+                <span style="line-height: 1.5;">En el plano docente, se fortaleció el trabajo colectivo y el liderazgo pedagógico, especialmente a través del rol de los docentes líderes de Centros de Interés, quienes aportaron a la construcción de matrices integradoras, al análisis curricular y a la articulación con los planes de área. Este proceso favoreció el tránsito desde prácticas aisladas hacia una mirada más sistémica de la formación integral.</span>
+            </div>
+
+            <div class="logros-item" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(240, 171, 252, 0.3); padding: 25px; border-radius: 20px; display: flex; flex-direction: column; gap: 15px; transition: transform 0.3s ease;">
+                <div style="font-size: 2rem; background: var(--accent-color); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #2e026d;">⚙️</div>
+                <span style="line-height: 1.5;">Asimismo, se lograron avances concretos en la gestión institucional, reflejados en la adquisición de recursos pedagógicos, el acompañamiento directivo y la recuperación de infraestructura clave para la institución. Estas acciones evidencian que la gestión administrativa, cuando dialoga con lo pedagógico, se convierte en un motor de transformación educativa.</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; background: var(--card-gradient); padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="font-size: 2.5rem;">🌟</div>
+                <p style="margin: 0; font-weight: 500; font-size: 1.1rem; line-height: 1.6; text-align: left;">
+                    Finalmente, uno de los logros más significativos fue el posicionamiento de la Educación CRESE, especialmente del componente socioemocional, en las planeaciones de aula, mallas curriculares y proyectos institucionales como Vivir Sabroso en la Escuela y la Cátedra de Paz. Este avance marca un cambio cultural importante en la comprensión de la formación integral como eje transversal del currículo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cierre">
+        <div class="cierre-box" style="background: linear-gradient(135deg, #2e026d 0%, #1e1b4b 100%); border: 1px solid var(--accent-color); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--accent-color); filter: blur(120px); opacity: 0.2;"></div>
+            
+            <h2 style="background: transparent; border: none; font-size: 1.8rem; margin-bottom: 40px; color: var(--accent-color);">
+                Cierre reflexivo: aprender a caminar juntos en la incertidumbre
+            </h2>
+            
+            <div class="cierre-text" style="text-align: left; max-width: 900px; margin: 0 auto;">
+                <p style="margin-bottom: 25px; font-size: 1.1rem; border-left: 3px solid var(--accent-color); padding-left: 20px;">
+                    La travesía pedagógica vivida en el marco de la Ruta PTAFI 3.0 en el Colegio Técnico Microempresarial El Carmen confirma que la formación integral no se implementa desde la certeza, sino desde la búsqueda constante, el diálogo y la construcción colectiva. Los avances logrados conviven con tensiones reales: limitaciones de tiempo, sobrecarga docente, resistencias al cambio y desafíos para la sostenibilidad de las apuestas pedagógicas.
+                </p>
+                
+                <p style="margin-bottom: 25px; font-size: 1.1rem; opacity: 0.9;">
+                    Sin embargo, esta experiencia deja una enseñanza profunda: cuando la escuela se piensa como un espacio de humanidad, escucha y confianza, es posible resignificar el currículo, el tiempo escolar y las relaciones pedagógicas. La armonización curricular, lejos de ser un ejercicio técnico, se revela como un proceso ético y político que reconoce el saber docente, la voz de los estudiantes y el contexto territorial.
+                </p>
+
+                <p style="margin-bottom: 40px; font-size: 1.1rem; opacity: 0.9;">
+                    El camino recorrido no cierra procesos; los abre. Los Centros de Interés, la Educación CRESE y el Plan de Formación Integral siguen siendo apuestas en construcción que requieren continuidad, coherencia institucional y respaldo de la política educativa. Más que respuestas definitivas, esta experiencia ofrece preguntas necesarias para seguir pensando la escuela que queremos: una escuela donde aprender tenga sentido, donde el error sea oportunidad y donde la formación integral deje de ser un ideal para convertirse en una práctica cotidiana.
+                </p>
+                
+                <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(240, 171, 252, 0.3); text-align: center;">
+                    <p style="font-size: 1.4rem; font-weight: 700; font-style: italic; color: var(--accent-color); line-height: 1.4;">
+                        "En tiempos de incertidumbre, esta travesía reafirma una convicción: la transformación educativa no ocurre cuando todo está resuelto, sino cuando decidimos caminar juntos, aun sin tener el mapa completo."
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Footer -->
-    <footer class="py-24 bg-black border-t border-white/5">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center gap-8 mb-12">
-                <a href="https://www.facebook.com/H.villanuevaautosale" class="text-3xl text-gray-500 hover:text-blue-500 transition-colors"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/eldeloshonda" class="text-3xl text-gray-500 hover:text-pink-500 transition-colors"><i class="fab fa-instagram"></i></a>
+   <section id="anexos">
+        <h2 style="margin-bottom: 40px;">Galería de Anexos Pedagógicos</h2>
+        <div class="anexos-grid">
+            <div class="anexo-item">
+                <p>ANEXO 1. Plan de Formación Integral 2025</p>
+                <img src="https://static.wixstatic.com/media/e56c55_57fa801b8d93461493f1a32c862645d2~mv2.jpg" alt="Anexo 1" style="height: 180px; object-fit: cover; width: 100%;">
             </div>
-            
-            <p class="text-4xl font-extrabold italic tracking-tighter mb-4 uppercase">"Móntate conmigo y siente la diferencia Honda." 🚀</p>
-            <p class="text-blue-400 font-bold text-xl mb-8">Aquí el proceso es claro, rápido y sin estrés 👊</p>
-            
-            <p class="text-gray-600 font-bold tracking-widest text-sm uppercase">© 2026 Héctor Villanueva - Honda Sales Executive</p>
+
+            <div class="anexo-item">
+                <p>ANEXO 2. Matriz de Balance de los CI</p>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <img src="https://static.wixstatic.com/media/e56c55_6cae661fb99d41858848bd7bb0cd0f49~mv2.png" alt="Anexo 2-1">
+                    <img src="https://static.wixstatic.com/media/e56c55_6ba40d8378904026aaa57be70eee1e0c~mv2.png" alt="Anexo 2-2">
+                </div>
+            </div>
+
+            <div class="anexo-item">
+                <p>ANEXO 3. Matriz Integradora CRESE y Centros de Interés</p>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <img src="https://static.wixstatic.com/media/e56c55_391b3bb869834ce8a95d68349c1afecb~mv2.jpg" alt="Anexo 3-1">
+                    <img src="https://static.wixstatic.com/media/e56c55_caeffe549f4f4d3c907b7372f99138a7~mv2.jpg" alt="Anexo 3-2">
+                </div>
+            </div>
+
+            <div class="anexo-item">
+                <p>ANEXO 4. Articulación Curricular por Dimensiones Humanas</p>
+                <img src="https://static.wixstatic.com/media/e56c55_f1695857fcca4d538dc4001aba586e38~mv2.png" alt="Anexo 4">
+            </div>
+
+            <div class="anexo-item">
+                <p>ANEXO 5. Articulación Plan de Área (Lengua Castellana)</p>
+                <img src="https://static.wixstatic.com/media/e56c55_e001fc263d6449d884d5abfd903da5b5~mv2.png" alt="Anexo 5">
+            </div>
         </div>
-    </footer>
+    </section>
+</div>
 
-    <script>
-        function toggleParents(show) {
-            const el = document.getElementById('parentInfo');
-            el.classList.toggle('hidden', !show);
+<div id="imageModal">
+    <div id="modalContainer" style="position: relative; display: flex; justify-content: center; align-items: center;"></div>
+</div>
+
+<script>
+    const modal = document.getElementById('imageModal');
+    const modalContainer = document.getElementById('modalContainer');
+    const allImages = document.querySelectorAll('.container img:not(.logos-container img)');
+    const videoTrigger = document.getElementById('videoTrigger');
+
+    function openModal(content) {
+        modalContainer.innerHTML = content;
+        modal.style.display = "flex";
+    }
+
+    allImages.forEach(img => {
+        if(img.id !== 'videoTrigger') {
+            img.onclick = () => openModal(`<img src="${img.src}" class="modal-content">`);
         }
+    });
 
-        function toggleInvFields() {
-            const val = document.getElementById('invType').value;
-            document.getElementById('hondaModelsGrid').classList.toggle('hidden', val !== 'honda');
-            document.getElementById('usedFieldsGroup').classList.toggle('hidden', val !== 'used');
-        }
+    videoTrigger.onclick = () => {
+        openModal(`
+            <video controls autoplay class="modal-content" style="width: 80vw; max-width: 800px; border-radius: 12px; box-shadow: 0 0 50px rgba(0,0,0,0.5);">
+                <source src="https://video.wixstatic.com/video/e56c55_a9e992cad3e949f3aae8f7522959449e/360p/mp4/file.mp4" type="video/mp4">
+            </video>
+        `);
+    };
 
-        function toggleTradeIn(show) {
-            document.getElementById('tradeInComplex').classList.toggle('hidden', !show);
-        }
+    modal.onclick = (e) => { if(e.target === modal) { modal.style.display = "none"; modalContainer.innerHTML = ""; } };
+    document.addEventListener('keydown', (e) => { if (e.key === "Escape") { modal.style.display = "none"; modalContainer.innerHTML = ""; } });
 
-        function toggleDebt(show) {
-            document.getElementById('debtDetails').classList.toggle('hidden', !show);
-        }
+    function scrollSlider(id, direction) {
+        const slider = document.getElementById(id);
+        const scrollAmount = slider.offsetWidth * 0.8;
+        slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+</script>
 
-        document.getElementById('proFunnel').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            btn.innerHTML = 'PROCESANDO SOLICITUD... <i class="fas fa-circle-notch fa-spin ml-2"></i>';
-            btn.classList.add('opacity-50', 'pointer-events-none');
-
-            setTimeout(() => {
-                btn.innerHTML = '¡SOLICITUD ENVIADA! ✅';
-                btn.style.backgroundColor = '#10b981';
-                btn.style.color = 'white';
-            }, 2000);
-        });
-    </script>
 </body>
 </html>
